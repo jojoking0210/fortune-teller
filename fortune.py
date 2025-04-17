@@ -1,20 +1,32 @@
-# fortune.py
+import random
 
-def main():
-    name = "Pranav Tanaji Sarate"
-    admission_number = "21JE0673"
+print("🔮 Welcome to Pranav Tanaji Sarate's Fortune Teller (21JE0673) 🔮")
+mood = input("How are you feeling today? (happy/sad/neutral/stressed): ").lower()
 
-    print(f"🔮 Welcome to {name}'s Fortune Teller ({admission_number}) 🔮")
-    mood = input("How are you feeling today? (happy/sad/neutral): ").lower()
+fortunes = {
+    "happy": [
+        "Great things await you, Aryan! Keep smiling. ✨",
+        "Your joy is contagious—spread it around! 🌞",
+        "Happiness will bring new opportunities soon. 🍀"
+    ],
+    "sad": [
+        "Tough times don't last, but tough people do. 💪",
+        "Even rainy days end in rainbows. 🌈",
+        "A smile is coming your way, Aryan. 😊"
+    ],
+    "neutral": [
+        "Today may seem ordinary, but surprises await. 🎁",
+        "Balance is good—stay centered. 🧘",
+        "Your calm energy brings peace to others. 🌿"
+    ],
+    "stressed": [
+        "Take a deep breath—peace is coming. 🕊️",
+        "Aryan, you're stronger than the stress. 💥",
+        "This pressure will lead to diamonds. 💎"
+    ]
+}
 
-    if mood == "happy":
-        print(f"✨ Your fortune: Great things await you, {name}! Keep smiling. ✨")
-    elif mood == "sad":
-        print("💧 Your fortune: Better days are coming. Hang in there. 💧")
-    elif mood == "neutral":
-        print("🌤 Your fortune: Stay curious—something unexpected is on its way. 🌤")
-    else:
-        print("🤔 I don't understand that mood, but stay positive!")
-
-if __name__ == "__main__":
-    main()
+if mood in fortunes:
+    print(f"✨ Your fortune: {random.choice(fortunes[mood])} ✨")
+else:
+    print("Sorry, I can't read that mood yet... 🤔")
