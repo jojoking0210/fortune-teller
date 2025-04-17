@@ -1,23 +1,23 @@
-name: Create Release on Tag
+name: Release on Tag
 
 on:
   push:
     tags:
       - 'v*'
 
+permissions:
+  contents: write  # ✅ This is required to create a release
+
 jobs:
   release:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write  # Permission to upload content to the repository
-      id-token: write  # Permission to use an ID token for authentication
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Create GitHub Release
+      - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: fortune.py
+          tag_name: ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
