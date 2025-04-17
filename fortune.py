@@ -23,6 +23,8 @@ fortunes = {
         "Balance is good—stay centered. 🧘",
         "Your calm energy brings peace to others. 🌿"
     ],
+      # Version 1.2 update - added a new mood
+
     "stressed": [
         "Take a deep breath—peace is coming. 🕊️",
         f"{my_name}, you're stronger than the stress. 💥",
