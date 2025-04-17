@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
-      id-token: write
+      contents: write  # Permission to upload content to the repository
+      id-token: write  # Permission to use an ID token for authentication
 
     steps:
       - name: Checkout repository
